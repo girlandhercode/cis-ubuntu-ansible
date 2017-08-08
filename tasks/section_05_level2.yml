@@ -1,17 +1,17 @@
 ---
 
-  - name: 5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured (Scored)
-    file:
-      path: /etc/ssh/sshd_config
-      owner: root
-      group: root
-      mode: 0600
-      state: file
-    notify: restart ssh
-    tags:
-      - section5
-      - section5.2
-      - section5.2.1
+  # - name: 5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured (Scored)
+  #   file:
+  #     path: /etc/ssh/sshd_config
+  #     owner: root
+  #     group: root
+  #     mode: 0600
+  #     state: file
+  #   notify: restart ssh
+  #   tags:
+  #     - section5
+  #     - section5.2
+  #     - section5.2.1
 
   - name: 5.2.2 Ensure SSH Protocol is set to 2 (Scored)
     lineinfile:

@@ -47,13 +47,13 @@
       - section1.4
       - section1.4.3
 
-  - name: 1.4.3 Ensure authentication required for single user mode (Scored)
-    user:
-      name: root
-      state: present
-      password: "{{ root_password }}"
-    when: root_password_set.rc == 0
-    tags:
-      - section1
-      - section1.4
-      - section1.4.3
+  # - name: 1.4.3 Ensure authentication required for single user mode (Scored)
+  #   user:
+  #     name: root
+  #     state: present
+  #     password: "{{ root_password }}"
+  #   when: root_password_set.rc == 0
+  #   tags:
+  #     - section1
+  #     - section1.4
+  #     - section1.4.3

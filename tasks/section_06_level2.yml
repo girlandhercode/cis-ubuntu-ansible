@@ -11,118 +11,118 @@
       - section6.2
       - section6.2.1
 
-  - name: 6.2.2 Ensure no legacy "+" entries exist in /etc/passwd (Scored)
-    command: grep '^+:' /etc/passwd
-    register: plus_pass
-    failed_when: plus_pass.rc == 0
-    changed_when: plus_pass.rc == 0
-    tags:
-      - section6
-      - section6.2
-      - section6.2.2
+  # - name: 6.2.2 Ensure no legacy "+" entries exist in /etc/passwd (Scored)
+  #   command: grep '^+:' /etc/passwd
+  #   register: plus_pass
+  #   failed_when: plus_pass.rc == 0
+  #   changed_when: plus_pass.rc == 0
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.2
 
-  - name: 6.2.3 Ensure no legacy "+" entries exist in /etc/shadow (Scored)
-    command: grep '^+:' /etc/shadow
-    register: plus_shadow
-    failed_when: plus_shadow.rc == 0
-    changed_when: plus_shadow.rc == 0
-    tags:
-      - section6
-      - section6.2
-      - section6.2.3
+  # - name: 6.2.3 Ensure no legacy "+" entries exist in /etc/shadow (Scored)
+  #   command: grep '^+:' /etc/shadow
+  #   register: plus_shadow
+  #   failed_when: plus_shadow.rc == 0
+  #   changed_when: plus_shadow.rc == 0
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.3
 
-  - name: 6.2.4 Ensure no legacy "+" entries exist in /etc/group (Scored)
-    command: grep '^+:' /etc/group
-    register: plus_group
-    failed_when: plus_group.rc == 0
-    changed_when: plus_group.rc == 0
-    tags:
-      - section6
-      - section6.2
-      - section6.2.4
+  # - name: 6.2.4 Ensure no legacy "+" entries exist in /etc/group (Scored)
+  #   command: grep '^+:' /etc/group
+  #   register: plus_group
+  #   failed_when: plus_group.rc == 0
+  #   changed_when: plus_group.rc == 0
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.4
 
-  - name: 6.2.5 Ensure root is the only UID 0 account (Scored)
-    command: awk -F':' '($3 == 0) { print $1 }' /etc/passwd
-    register: uid_zero_root
-    changed_when: False
-    failed_when: uid_zero_root.stdout != 'root'
-    tags:
-      - section6
-      - section6.2
-      - section6.2.5
+  # - name: 6.2.5 Ensure root is the only UID 0 account (Scored)
+  #   command: awk -F':' '($3 == 0) { print $1 }' /etc/passwd
+  #   register: uid_zero_root
+  #   changed_when: False
+  #   failed_when: uid_zero_root.stdout != 'root'
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.5
 
-  - copy:
-      src: scripts/6.2.6.sh
-      dest: /opt/6.2.6.sh
-      owner: root
-      group: root
-      mode: 0700
-    tags:
-      - section6
-      - section6.2
-      - section6.2.6
+  # - copy:
+  #     src: scripts/6.2.6.sh
+  #     dest: /opt/6.2.6.sh
+  #     owner: root
+  #     group: root
+  #     mode: 0700
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.6
 
-  - name: 6.2.6 Ensure root PATH Integrity (Scored)
-    shell: /opt/6.2.6.sh
-    register: root_path_integrity
-    tags:
-      - section6
-      - section6.2
-      - section6.2.6
+  # - name: 6.2.6 Ensure root PATH Integrity (Scored)
+  #   shell: /opt/6.2.6.sh
+  #   register: root_path_integrity
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.6
 
-  - debug: var=root_path_integrity.stdout_lines
+  # - debug: var=root_path_integrity.stdout_lines
 
-  - file:
-      path: /opt/6.2.6.sh
-      owner: root
-      group: root
-      state: absent
-    tags:
-      - section6
-      - section6.2
-      - section6.2.6
+  # - file:
+  #     path: /opt/6.2.6.sh
+  #     owner: root
+  #     group: root
+  #     state: absent
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.6
 
-  - copy:
-      src: scripts/6.2.7.sh
-      dest: /opt/6.2.7.sh
-      owner: root
-      group: root
-      mode: 0700
-    tags:
-      - section6
-      - section6.2
-      - section6.2.7
+  # - copy:
+  #     src: scripts/6.2.7.sh
+  #     dest: /opt/6.2.7.sh
+  #     owner: root
+  #     group: root
+  #     mode: 0700
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.7
 
-  - name: 6.2.7 Ensure all users' home directories exist (Scored)
-    shell: /opt/6.2.7.sh
-    register: home_directories_exist
-    tags:
-      - section6
-      - section6.2
-      - section6.2.7
+  # - name: 6.2.7 Ensure all users' home directories exist (Scored)
+  #   shell: /opt/6.2.7.sh
+  #   register: home_directories_exist
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.7
 
-  - debug: var=home_directories_exist.stdout_lines
+  # - debug: var=home_directories_exist.stdout_lines
 
-  - file:
-      path: /opt/6.2.7.sh
-      owner: root
-      group: root
-      state: absent
-    tags:
-      - section6
-      - section6.2
-      - section6.2.7
+  # - file:
+  #     path: /opt/6.2.7.sh
+  #     owner: root
+  #     group: root
+  #     state: absent
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.7
 
-  - copy:
-      src: scripts/6.2.8.sh
-      dest: /opt/6.2.8.sh
-      owner: root
-      group: root
-      mode: 0700
-    tags:
-      - section6
-      - section6.2
-      - section6.2.8
+  # - copy:
+  #     src: scripts/6.2.8.sh
+  #     dest: /opt/6.2.8.sh
+  #     owner: root
+  #     group: root
+  #     mode: 0700
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.8
 
   - name: 6.2.8 Ensure users' home directories permissions are 750 or more restrictive (Scored)
     shell: /opt/6.2.8.sh
@@ -156,13 +156,13 @@
       - section6.2
       - section6.2.9
 
-  - name: 6.2.9 Ensure users own their home directories (Scored)
-    shell: /opt/6.2.9.sh
-    register: home_directories_own
-    tags:
-      - section6
-      - section6.2
-      - section6.2.9
+  # - name: 6.2.9 Ensure users own their home directories (Scored)
+  #   shell: /opt/6.2.9.sh
+  #   register: home_directories_own
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.9
 
   - debug: var=home_directories_own.stdout_lines
 
