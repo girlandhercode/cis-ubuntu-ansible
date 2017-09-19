@@ -1,18 +1,17 @@
 ---
 
   - include: section_01_level1.yml
-  
+
   - include: section_01_level2.yml
-  
+
   - include: section_01_level3.yml
-  
+
   - include: section_01_level4.yml
-  
+
   - include: section_01_level5.yml
-  
+
   - include: section_01_level6.yml
-  
+
   - include: section_01_level7.yml
-  
+
   - include: section_01_level8.yml
-  
