@@ -1,4 +1,4 @@
-# ---
+---
 
 #   - name: 3.5.1 Ensure DCCP is disabled (Not Scored)
 #     lineinfile:

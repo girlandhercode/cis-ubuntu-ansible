@@ -9,16 +9,16 @@
       - section5.4
       - section5.4.1.1
 
-  - name: 5.4.1.1 Ensure password expiration is 90 days or less (Scored)
-    lineinfile:
-      dest: /etc/login.defs
-      line: 'PASS_MAX_DAYS 90'
-      regexp: '^PASS_MAX_DAYS'
-    when: pass_max_days.stdout|int > 90
-    tags:
-      - section5
-      - section5.4
-      - section5.4.1.1
+  # - name: 5.4.1.1 Ensure password expiration is 90 days or less (Scored)
+  #   lineinfile:
+  #     dest: /etc/login.defs
+  #     line: 'PASS_MAX_DAYS 90'
+  #     regexp: '^PASS_MAX_DAYS'
+  #   when: pass_max_days.stdout|int > 90
+  #   tags:
+  #     - section5
+  #     - section5.4
+  #     - section5.4.1.1
 
   - command: grep -oP '(?<=^PASS_MIN_DAYS\s)[0-9]+' /etc/login.defs
     register: pass_min_days
@@ -29,16 +29,16 @@
       - section5.4
       - section5.4.1.2
 
-  - name: 5.4.1.2 Ensure minimum days between password changes is 7 or more (Scored)
-    lineinfile:
-      dest: /etc/login.defs
-      line: 'PASS_MIN_DAYS 7'
-      regexp: '^PASS_MIN_DAYS'
-    when: pass_min_days.stdout|int < 7
-    tags:
-      - section5
-      - section5.4
-      - section5.4.1.2
+  # - name: 5.4.1.2 Ensure minimum days between password changes is 7 or more (Scored)
+  #   lineinfile:
+  #     dest: /etc/login.defs
+  #     line: 'PASS_MIN_DAYS 7'
+  #     regexp: '^PASS_MIN_DAYS'
+  #   when: pass_min_days.stdout|int < 7
+  #   tags:
+  #     - section5
+  #     - section5.4
+  #     - section5.4.1.2
 
   - command: grep -oP '(?<=^PASS_WARN_AGE\s)[0-9]+' /etc/login.defs
     register: pass_warn_age
@@ -49,16 +49,16 @@
       - section5.4
       - section5.4.1.3
 
-  - name: 5.4.1.3 Ensure password expiration warning days is 7 or more (Scored)
-    lineinfile:
-      dest: /etc/login.defs
-      line: 'PASS_WARN_AGE 7'
-      regexp: '^PASS_WARN_AGE'
-    when: pass_warn_age.stdout|int < 7
-    tags:
-      - section5
-      - section5.4
-      - section5.4.1.3
+  # - name: 5.4.1.3 Ensure password expiration warning days is 7 or more (Scored)
+  #   lineinfile:
+  #     dest: /etc/login.defs
+  #     line: 'PASS_WARN_AGE 7'
+  #     regexp: '^PASS_WARN_AGE'
+  #   when: pass_warn_age.stdout|int < 7
+  #   tags:
+  #     - section5
+  #     - section5.4
+  #     - section5.4.1.3
 
   - command: grep INACTIVE /etc/login.defs
     changed_when: False

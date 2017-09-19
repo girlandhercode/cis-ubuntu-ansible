@@ -1,4 +1,4 @@
-# ---
+---
 
 #   - stat:
 #       path: /etc/xinetd.d/chargen

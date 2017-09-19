@@ -1,13 +1,13 @@
 ---
 
-  # - name: 2.2.1.1 Ensure time synchronization is in use (Not Scored)
-  #   apt:
-  #     name: "{{ntp_package}}"
-  #     state: present
-  #   tags:
-  #     - section2
-  #     - section2.2
-  #     - section2.2.1.1
+  - name: 2.2.1.1 Ensure time synchronization is in use (Not Scored)
+    apt:
+      name: "{{ntp_package}}"
+      state: present
+    tags:
+      - section2
+      - section2.2
+      - section2.2.1.1
 
   - name: 2.2.1.2 Ensure ntp is configured (Scored)
     lineinfile:
@@ -375,15 +375,15 @@
       - section2.2
       - section2.2.15
 
-  - command: dpkg-query -s rsync
-    register: rsync_installed
-    failed_when: False
-    ignore_errors: True
-    changed_when: False
-    tags:
-      - section2
-      - section2.2
-      - section2.2.16
+  # - command: dpkg-query -s rsync
+  #   register: rsync_installed
+  #   failed_when: False
+  #   ignore_errors: True
+  #   changed_when: False
+  #   tags:
+  #     - section2
+  #     - section2.2
+  #     - section2.2.16
 
   # - name: 2.2.16 Ensure rsync service is not enabled (Scored)
   #   service:
