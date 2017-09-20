@@ -113,16 +113,16 @@
   #     - section6.2
   #     - section6.2.7
 
-  # - copy:
-  #     src: scripts/6.2.8.sh
-  #     dest: /opt/6.2.8.sh
-  #     owner: root
-  #     group: root
-  #     mode: 0700
-  #   tags:
-  #     - section6
-  #     - section6.2
-  #     - section6.2.8
+  - copy:
+      src: scripts/6.2.8.sh
+      dest: /opt/6.2.8.sh
+      owner: root
+      group: root
+      mode: 0700
+    tags:
+      - section6
+      - section6.2
+      - section6.2.8
 
   - name: 6.2.8 Ensure users' home directories permissions are 750 or more restrictive (Scored)
     shell: /opt/6.2.8.sh
@@ -145,16 +145,16 @@
       - section6.2
       - section6.2.8
 
-  - copy:
-      src: scripts/6.2.9.sh
-      dest: /opt/6.2.9.sh
-      owner: root
-      group: root
-      mode: 0700
-    tags:
-      - section6
-      - section6.2
-      - section6.2.9
+  # - copy:
+  #     src: scripts/6.2.9.sh
+  #     dest: /opt/6.2.9.sh
+  #     owner: root
+  #     group: root
+  #     mode: 0700
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.9
 
   # - name: 6.2.9 Ensure users own their home directories (Scored)
   #   shell: /opt/6.2.9.sh
@@ -166,15 +166,15 @@
 
   - debug: var=home_directories_own.stdout_lines
 
-  - file:
-      path: /opt/6.2.9.sh
-      owner: root
-      group: root
-      state: absent
-    tags:
-      - section6
-      - section6.2
-      - section6.2.9
+  # - file:
+  #     path: /opt/6.2.9.sh
+  #     owner: root
+  #     group: root
+  #     state: absent
+  #   tags:
+  #     - section6
+  #     - section6.2
+  #     - section6.2.9
 
   - copy:
       src: scripts/6.2.10.sh
