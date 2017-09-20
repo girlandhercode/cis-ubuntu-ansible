@@ -132,15 +132,15 @@
   #     - section4.2
   #     - section4.2.1.5
 
-  # - command: dpkg-query -s syslog-ng
-  #   register: syslognginstalled
-  #   changed_when: False
-  #   failed_when: False
-  #   check_mode: no
-  #   tags:
-  #     - section4
-  #     - section4.2
-  #     - section4.2.2.1
+  - command: dpkg-query -s syslog-ng
+    register: syslognginstalled
+    changed_when: False
+    failed_when: False
+    check_mode: no
+    tags:
+      - section4
+      - section4.2
+      - section4.2.2.1
 
   # - name: 4.2.2.1 Ensure syslog-ng service is enabled (Scored)
   #   service:
