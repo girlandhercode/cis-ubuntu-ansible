@@ -123,7 +123,7 @@
   - name: 5.4.3 Ensure default group for the root account is GID 0 (Scored)
     command: grep "^root:" /etc/passwd | cut -f4 -d':'
     register: root_gid
-    failed_when: False 
+    failed_when: False
     tags:
       - section5
       - section5.4

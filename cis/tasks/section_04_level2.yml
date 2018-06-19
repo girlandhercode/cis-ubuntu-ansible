@@ -59,7 +59,7 @@
   # - command: grep ^\\$FileCreateMode {{ item }}
   #   with_items:
   #     - '/etc/rsyslog.conf'
-  #     - '{{ rsyslog_files.stdout_lines }}'    
+  #     - '{{ rsyslog_files.stdout_lines }}'
   #   register: filecreate_exists
   #   ignore_errors: True
   #   notify: restart rsyslog

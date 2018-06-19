@@ -47,10 +47,10 @@
 
   - name: restart chrony
     service:
-      name: chrony 
+      name: chrony
       state: restarted
     changed_when: False
-    ignore_errors: True  
+    ignore_errors: True
 
   - name: restart ntp
     service:

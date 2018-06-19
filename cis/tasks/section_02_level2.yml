@@ -96,7 +96,7 @@
 
   # - command: dpkg-query -s isc-dhcp-server
   #   register: dhcp_installed
-  #   failed_when: False 
+  #   failed_when: False
   #   ignore_errors: True
   #   changed_when: False
   #   tags:
@@ -106,7 +106,7 @@
 
   # - command: dpkg-query -s isc-dhcp-server6
   #   register: dhcp6_installed
-  #   failed_when: False 
+  #   failed_when: False
   #   ignore_errors: True
   #   changed_when: False
   #   tags:
@@ -227,7 +227,7 @@
 
   # - command: dpkg-query -s apache2
   #   register: apache2_installed
-  #   failed_when: False 
+  #   failed_when: False
   #   ignore_errors: True
   #   changed_when: False
   #   tags:

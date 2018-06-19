@@ -95,8 +95,8 @@
     register: mount_tmp_output
     failed_when: False
     ignore_errors: True
-    tags: 
-      - section1 
+    tags:
+      - section1
       - section1.1
       - section1.1.3
 
@@ -197,7 +197,7 @@
   - command: grep "^password" /boot/grub/grub.cfg
     register: boot_password
     failed_when: false
-    ignore_errors: yes 
+    ignore_errors: yes
     changed_when: False
 
   - name: 1.4.2 Ensure bootloader password is set (Scored)

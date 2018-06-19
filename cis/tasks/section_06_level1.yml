@@ -7,7 +7,7 @@
   #     - section6.1
   #     - section6.1.1
 
-  # - name: 6.1.1 Audit system file permissions (Not Scored) 
+  # - name: 6.1.1 Audit system file permissions (Not Scored)
   #   shell: dpkg --verify {{ item }}
   #   with_items: "{{ dpkg_output.stdout_lines }}"
   #   when: dpkg_verify == True
@@ -15,7 +15,7 @@
   #     - section6
   #     - section6.1
   #     - section6.1.1
-    
+
   # - name: 6.1.2 Ensure permissions on /etc/passwd are configured (Scored)
   #   file:
   #     path: /etc/passwd
